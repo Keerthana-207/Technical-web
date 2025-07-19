@@ -22,15 +22,6 @@ nav .right-text{
     color:cornflowerblue;
 }
 
-/* nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    gap: 30px;
-} */
-
 
 nav ul li{
     cursor: pointer;
@@ -90,7 +81,7 @@ nav ul li:active{
     flex-direction: row;
     justify-content: space-evenly;
     background-color: black;
-    width:100vw;
+    width:100%;
     height:100vh;
     margin: auto;
 }
@@ -128,7 +119,7 @@ nav ul li:active{
 
 #testimonial{
     background-color: black;
-    width:100vw;
+    width:100%;
     height:75vh;
     display: flex;
     flex-direction: column;
@@ -170,7 +161,7 @@ nav ul li:active{
 
 footer {
     background-color: black;
-    width:100vw;
+    width:100%;
     min-height:100vh; 
     padding:50px 100px;
     display: flex;
@@ -328,6 +319,17 @@ form #GDPR {
 
 
 @media (min-width: 992px) {
+  #home {
+    flex-direction: row;
+    padding:50px 100px;
+    text-align: center;
+  }
+
+  #home .home-1{
+    align-items: center;
+    text-align: center;
+    padding-left:120px;
+  }
   .navbar-custom {
     display: flex;
     flex-direction: row;
