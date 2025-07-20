@@ -18,7 +18,7 @@
             <div class="menu-toggle d-lg-none" id="menuToggle">
                 <h5>Menu</h5>
             </div>
-
+            <div class="nav-content">
             <div class="nav-links" id="navLinks">
             <ul>
                 <li><h5>Home</h5></li>
@@ -26,7 +26,7 @@
                 <li><h5>Contact</h5></li>
             </ul>
             </div>
-
+            </div>
             <div class="right-text">
                 <h5>Start a Journey</h5>
             </div>
@@ -73,9 +73,9 @@
         </main>
         <section id="pricing">
             <picture>
-                <source srcset="historical.png" media="(max-width: 991px)">
-                <source srcset="historic destinations.png" media="(min-width: 991px)">
-                <img src="historic destinations.png" alt="watermark">
+                <source srcset="historical.png" class="img-fluid" media="(max-width: 991px)">
+                <source srcset="historic destinations.png" class="img-fluid" media="(min-width: 991px)">
+                <img src="historic destinations.png" class="img-fluid" alt="watermark">
             </picture>
             <div class="pricing-container">
                 <div>
@@ -294,13 +294,18 @@
             </section>
         </footer>
     </body>
-    <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggles = document.querySelectorAll('.menu-toggle, .menu-toggle-small');
+    const navContent = document.querySelector('.nav-content');
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        navContent.classList.toggle('show');
+      });
+    });
   });
 </script>
+
 
 </html>
