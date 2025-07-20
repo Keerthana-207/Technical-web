@@ -37,6 +37,9 @@ nav .right-text{
     color:cornflowerblue;
 }
 
+.nav-content.show {
+  display: flex;
+}
 
 nav ul li{
     cursor: pointer;
@@ -106,6 +109,9 @@ nav ul li:active{
 
 #pricing > picture, #testimonial > img{
     padding:20px 0;
+    max-width: 100%;
+    height:auto;
+    object-fit: contain;
     position: absolute;
     z-index:0;
     pointer-events: none;
@@ -454,6 +460,22 @@ form #GDPR {
 
   .menu-toggle, .right-text {
     display: none;
+  }
+
+  .nav-content {
+    display: none;
+  }
+
+  .nav-content.show {
+    display: flex;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links ul li {
+    font-size: 18px;
   }
 
   .nav-content {
