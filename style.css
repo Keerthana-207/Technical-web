@@ -1,13 +1,25 @@
-html,body {
-  overflow-x:hidden;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
-    background-image:url('Frame\ 5.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
     color:white;
+}
+
+main {
+  background-image:url('Frame\ 5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .navbar-custom {
     display: flex;
@@ -42,12 +54,15 @@ nav ul li:active{
 }
 
 #home {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch;
-    padding:50px 100px;
     gap:40px;
+    margin: 0;
+    padding: 50px 20px;
 }
 
 #home .home-1{
@@ -89,7 +104,7 @@ nav ul li:active{
 }
 
 
-#pricing > img{
+#pricing > picture, #testimonial > img{
     padding:20px 0;
     position: absolute;
     z-index:0;
@@ -116,10 +131,46 @@ nav ul li:active{
     font-size:25px;
 }
 
-#carouselExampleIndicators {
-    display: none;
+#pricingCarousel {
+  display: none;
 }
 
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff; /* or any color */
+    border: none;
+    margin: 0 5px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: white; /* active dot color */
+}
+
+#testimonialCarousel img {
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.carousel-item{
+  width:80%;
+  height:auto;
+  margin: 30px 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+#testimonialCarousel .carousel-item {
+  padding: 30px;
+  background-color: rgba(18, 18, 18, 0.85);
+  z-index: 1;
+}
 #testimonial{
     padding:20px 0;
     background-color: black;
@@ -148,7 +199,8 @@ nav ul li:active{
     max-width:350px;
     margin-bottom:20px;
     /* height: 400px; */
-    background-color: rgba(225,225,225,0.1);
+    background-color: rgba(18, 18, 18, 0.8);
+    z-index:1;
 }
 
 #testimonial .testimonial-container h5{
@@ -328,14 +380,14 @@ form #GDPR {
   #home {
     flex-direction: row;
     padding:50px 100px;
-    text-align: center;
+    text-align: left;
+    align-items: flex-start;
   }
 
   #home .home-1{
-    align-items: center;
-    text-align: center;
     padding-left:120px;
   }
+
   .navbar-custom {
     display: flex;
     flex-direction: row;
@@ -376,6 +428,14 @@ form #GDPR {
     justify-content: flex-end;
     padding: 0;
     color: cornflowerblue;
+  }
+
+   #pricingCarousel {
+    display: none !important;
+  }
+
+  #testimonialCarousel {
+    display: none !important;
   }
 }
 /* Hide menu toggle by default */
@@ -426,6 +486,10 @@ form #GDPR {
     flex-wrap: wrap;
     gap:20px;
   }
+
+  .testimonial-main {
+    display: none !important;
+  }
 }
 
 
@@ -447,7 +511,7 @@ form #GDPR {
     max-width: 75%;
     padding: 20px;
   }
-  #carouselExampleIndicators {
+  #pricingCarousel {
     display: block;
   }
 
@@ -461,5 +525,13 @@ form #GDPR {
   .icons {
     flex-wrap: wrap;
     gap:20px;
+  }
+
+  #testimonialCarousel {
+    display: block !important;
+  }
+
+   .testimonial-main {
+    display: none !important;
   }
 }
